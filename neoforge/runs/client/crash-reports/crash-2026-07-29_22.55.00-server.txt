@@ -1,0 +1,196 @@
+---- Minecraft Crash Report ----
+// Shall we play a game?
+
+Time: 2026-07-29 22:55:00
+Description: Ticking entity
+
+java.lang.IllegalArgumentException: Ticks cannot be negative.
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:141) ~[guava-33.6.0-jre.jar:?] {}
+	at TRANSFORMER/neoforge@26.2.0.32-beta/net.neoforged.neoforge.common.damagesource.DamageContainer.setPostAttackInvulnerabilityTicks(DamageContainer.java:136) ~[neoforge-26.2.0.32-beta-universal.jar:?] {}
+	at TRANSFORMER/neoforge@26.2.0.32-beta/net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent.setInvulnerabilityTicks(LivingIncomingDamageEvent.java:85) ~[neoforge-26.2.0.32-beta-universal.jar:?] {}
+	at TRANSFORMER/noprojectileiframes@26.2.0/com.astrazoey.noprojectileiframes.neoforge.NoProjectileIFramesNeoForge.onIncomingDamage(NoProjectileIFramesNeoForge.java:31) ~[main/:?] {}
+	at net.neoforged.bus.ConsumerEventHandler$WithPredicate.invoke(ConsumerEventHandler.java:48) ~[bus-8.0.5.jar:?] {}
+	at net.neoforged.bus.EventBus.post(EventBus.java:360) ~[bus-8.0.5.jar:?] {}
+	at net.neoforged.bus.EventBus.post(EventBus.java:328) ~[bus-8.0.5.jar:?] {}
+	at TRANSFORMER/neoforge@26.2.0.32-beta/net.neoforged.neoforge.common.CommonHooks.onEntityIncomingDamage(CommonHooks.java:322) ~[neoforge-26.2.0.32-beta-universal.jar:?] {}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.world.entity.LivingEntity.hurtServer(LivingEntity.java:1233) ~[minecraft-patched-26.2.0.32-beta.jar:?] {neoforge:access_transformer,neoforge:access_transformer,neoforge:mixin[APP:noprojectileiframes.mixins.json:DamageLivingEntityMixin from mod noprojectileiframes]}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.world.entity.Entity.hurtOrSimulate(Entity.java:1935) ~[minecraft-patched-26.2.0.32-beta.jar:?] {neoforge:access_transformer,neoforge:access_transformer}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.world.entity.projectile.arrow.AbstractArrow.onHitEntity(AbstractArrow.java:465) ~[minecraft-patched-26.2.0.32-beta.jar:?] {}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.world.entity.projectile.Projectile.onHit(Projectile.java:282) ~[minecraft-patched-26.2.0.32-beta.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.world.entity.projectile.Projectile.hitTargetOrDeflectSelf(Projectile.java:249) ~[minecraft-patched-26.2.0.32-beta.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.world.entity.projectile.arrow.AbstractArrow.hitTargetsOrDeflectSelf(AbstractArrow.java:308) ~[minecraft-patched-26.2.0.32-beta.jar:?] {}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.world.entity.projectile.arrow.AbstractArrow.stepMoveAndHit(AbstractArrow.java:296) ~[minecraft-patched-26.2.0.32-beta.jar:?] {}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.world.entity.projectile.arrow.AbstractArrow.tick(AbstractArrow.java:249) ~[minecraft-patched-26.2.0.32-beta.jar:?] {}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.world.entity.projectile.arrow.Arrow.tick(Arrow.java:76) ~[minecraft-patched-26.2.0.32-beta.jar:?] {}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.server.level.ServerLevel.tickNonPassenger(ServerLevel.java:858) ~[minecraft-patched-26.2.0.32-beta.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.world.level.Level.guardEntityTick(Level.java:538) ~[minecraft-patched-26.2.0.32-beta.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.server.level.ServerLevel.lambda$tick$0(ServerLevel.java:463) ~[minecraft-patched-26.2.0.32-beta.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.world.level.entity.EntityTickList.forEach(EntityTickList.java:53) ~[minecraft-patched-26.2.0.32-beta.jar:?] {}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.server.level.ServerLevel.tick(ServerLevel.java:443) ~[minecraft-patched-26.2.0.32-beta.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.server.MinecraftServer.tickChildren(MinecraftServer.java:1140) ~[minecraft-patched-26.2.0.32-beta.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.server.MinecraftServer.tickServer(MinecraftServer.java:993) ~[minecraft-patched-26.2.0.32-beta.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.client.server.IntegratedServer.tickServer(IntegratedServer.java:151) ~[minecraft-patched-26.2.0.32-beta.jar:?] {}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.server.MinecraftServer.processPacketsAndTick(MinecraftServer.java:1025) ~[minecraft-patched-26.2.0.32-beta.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.client.server.IntegratedServer.processPacketsAndTick(IntegratedServer.java:124) ~[minecraft-patched-26.2.0.32-beta.jar:?] {}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:766) [minecraft-patched-26.2.0.32-beta.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:299) [minecraft-patched-26.2.0.32-beta.jar:?] {neoforge:access_transformer}
+	at java.base/java.lang.Thread.run(Thread.java:1474) [?:?] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Stacktrace:
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:141) ~[guava-33.6.0-jre.jar:?] {}
+	at TRANSFORMER/neoforge@26.2.0.32-beta/net.neoforged.neoforge.common.damagesource.DamageContainer.setPostAttackInvulnerabilityTicks(DamageContainer.java:136) ~[neoforge-26.2.0.32-beta-universal.jar:?] {}
+	at TRANSFORMER/neoforge@26.2.0.32-beta/net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent.setInvulnerabilityTicks(LivingIncomingDamageEvent.java:85) ~[neoforge-26.2.0.32-beta-universal.jar:?] {}
+	at TRANSFORMER/noprojectileiframes@26.2.0/com.astrazoey.noprojectileiframes.neoforge.NoProjectileIFramesNeoForge.onIncomingDamage(NoProjectileIFramesNeoForge.java:31) ~[main/:?] {}
+	at net.neoforged.bus.ConsumerEventHandler$WithPredicate.invoke(ConsumerEventHandler.java:48) ~[bus-8.0.5.jar:?] {}
+	at net.neoforged.bus.EventBus.post(EventBus.java:360) ~[bus-8.0.5.jar:?] {}
+	at net.neoforged.bus.EventBus.post(EventBus.java:328) ~[bus-8.0.5.jar:?] {}
+	at TRANSFORMER/neoforge@26.2.0.32-beta/net.neoforged.neoforge.common.CommonHooks.onEntityIncomingDamage(CommonHooks.java:322) ~[neoforge-26.2.0.32-beta-universal.jar:?] {}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.world.entity.LivingEntity.hurtServer(LivingEntity.java:1233) ~[minecraft-patched-26.2.0.32-beta.jar:?] {neoforge:access_transformer,neoforge:access_transformer,neoforge:mixin[APP:noprojectileiframes.mixins.json:DamageLivingEntityMixin from mod noprojectileiframes]}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.world.entity.Entity.hurtOrSimulate(Entity.java:1935) ~[minecraft-patched-26.2.0.32-beta.jar:?] {neoforge:access_transformer,neoforge:access_transformer}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.world.entity.projectile.arrow.AbstractArrow.onHitEntity(AbstractArrow.java:465) ~[minecraft-patched-26.2.0.32-beta.jar:?] {}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.world.entity.projectile.Projectile.onHit(Projectile.java:282) ~[minecraft-patched-26.2.0.32-beta.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.world.entity.projectile.Projectile.hitTargetOrDeflectSelf(Projectile.java:249) ~[minecraft-patched-26.2.0.32-beta.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.world.entity.projectile.arrow.AbstractArrow.hitTargetsOrDeflectSelf(AbstractArrow.java:308) ~[minecraft-patched-26.2.0.32-beta.jar:?] {}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.world.entity.projectile.arrow.AbstractArrow.stepMoveAndHit(AbstractArrow.java:296) ~[minecraft-patched-26.2.0.32-beta.jar:?] {}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.world.entity.projectile.arrow.AbstractArrow.tick(AbstractArrow.java:249) ~[minecraft-patched-26.2.0.32-beta.jar:?] {}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.world.entity.projectile.arrow.Arrow.tick(Arrow.java:76) ~[minecraft-patched-26.2.0.32-beta.jar:?] {}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.server.level.ServerLevel.tickNonPassenger(ServerLevel.java:858) ~[minecraft-patched-26.2.0.32-beta.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.world.level.Level.guardEntityTick(Level.java:538) ~[minecraft-patched-26.2.0.32-beta.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.server.level.ServerLevel.lambda$tick$0(ServerLevel.java:463) ~[minecraft-patched-26.2.0.32-beta.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.world.level.entity.EntityTickList.forEach(EntityTickList.java:53) ~[minecraft-patched-26.2.0.32-beta.jar:?] {}
+-- Entity being ticked --
+Details:
+	Entity Type: minecraft:arrow (net.minecraft.world.entity.projectile.arrow.Arrow)
+	Entity ID: 410
+	Entity Name: Arrow
+	Entity's Exact location: -11.20, 65.29, -18.58
+	Entity's Block location: World: (-12,65,-19), Section: (at 4,1,13 in -1,4,-2; chunk contains blocks -16,-64,-32 to -1,319,-17), Region: (-1,-1; contains chunks -32,-32 to -1,-1, blocks -512,-64,-512 to -1,319,-1)
+	Entity's Momentum: -2.79, -1.24, 0.99
+	Entity's Passengers: []
+	Entity's Vehicle: null
+Stacktrace:
+	at TRANSFORMER/minecraft@26.2/net.minecraft.world.level.Level.guardEntityTick(Level.java:538) ~[minecraft-patched-26.2.0.32-beta.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.server.level.ServerLevel.lambda$tick$0(ServerLevel.java:463) ~[minecraft-patched-26.2.0.32-beta.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.world.level.entity.EntityTickList.forEach(EntityTickList.java:53) ~[minecraft-patched-26.2.0.32-beta.jar:?] {}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.server.level.ServerLevel.tick(ServerLevel.java:443) ~[minecraft-patched-26.2.0.32-beta.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.server.MinecraftServer.tickChildren(MinecraftServer.java:1140) ~[minecraft-patched-26.2.0.32-beta.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.server.MinecraftServer.tickServer(MinecraftServer.java:993) ~[minecraft-patched-26.2.0.32-beta.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.client.server.IntegratedServer.tickServer(IntegratedServer.java:151) ~[minecraft-patched-26.2.0.32-beta.jar:?] {}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.server.MinecraftServer.processPacketsAndTick(MinecraftServer.java:1025) ~[minecraft-patched-26.2.0.32-beta.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.client.server.IntegratedServer.processPacketsAndTick(IntegratedServer.java:124) ~[minecraft-patched-26.2.0.32-beta.jar:?] {}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:766) [minecraft-patched-26.2.0.32-beta.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:299) [minecraft-patched-26.2.0.32-beta.jar:?] {neoforge:access_transformer}
+	at java.base/java.lang.Thread.run(Thread.java:1474) [?:?] {}
+
+
+-- Affected level --
+Details:
+	All players: 1 total; ServerPlayer{name=Dev, id=6, pos=(-10.686786063413342, 64.0, -18.764661042818666), mode=CREATIVE, permission=owner}
+	Chunk stats: 2150
+	Level dimension: minecraft:overworld
+	Level time: 370 game time, 370 day time
+	Level spawn location: World: (0,64,0), Section: (at 0,0,0 in 0,4,0; chunk contains blocks 0,-64,0 to 15,319,15), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,-64,0 to 511,319,511)
+	Level name: New World
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Commands: true
+	Known server brands: neoforge
+	Removed feature flags: 
+	Level was modded: true
+	Level storage version: 0x04ABD - Anvil
+	Loaded entity count: 250
+	Server weather: Rain time: 17085 (now: false), thunder time: 73440 (now: false)
+Stacktrace:
+	at TRANSFORMER/minecraft@26.2/net.minecraft.server.level.ServerLevel.fillReportDetails(ServerLevel.java:1869) ~[minecraft-patched-26.2.0.32-beta.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.server.MinecraftServer.tickChildren(MinecraftServer.java:1143) ~[minecraft-patched-26.2.0.32-beta.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.server.MinecraftServer.tickServer(MinecraftServer.java:993) ~[minecraft-patched-26.2.0.32-beta.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.client.server.IntegratedServer.tickServer(IntegratedServer.java:151) ~[minecraft-patched-26.2.0.32-beta.jar:?] {}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.server.MinecraftServer.processPacketsAndTick(MinecraftServer.java:1025) ~[minecraft-patched-26.2.0.32-beta.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.client.server.IntegratedServer.processPacketsAndTick(IntegratedServer.java:124) ~[minecraft-patched-26.2.0.32-beta.jar:?] {}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:766) [minecraft-patched-26.2.0.32-beta.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:299) [minecraft-patched-26.2.0.32-beta.jar:?] {neoforge:access_transformer}
+	at java.base/java.lang.Thread.run(Thread.java:1474) [?:?] {}
+
+
+-- System Details --
+Details:
+	Minecraft Version: 26.2
+	Minecraft Version ID: 26.2
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 25.0.3, Microsoft
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Microsoft
+	Memory: 135866784 bytes (129 MiB) / 1195376640 bytes (1140 MiB) up to 8577351680 bytes (8180 MiB)
+	Memory (heap): init: 512MiB, used: 1005MiB, committed: 1140MiB, max: 8180MiB
+	Memory (non-head): init: 007MiB, used: 227MiB, committed: 231MiB, max: 000MiB
+	CPUs: 16
+	Processor Vendor: AuthenticAMD
+	Processor Name: AMD Ryzen 7 2700 Eight-Core Processor          
+	Identifier: AuthenticAMD Family 23 Model 8 Stepping 2
+	Microarchitecture: Zen+
+	Frequency (GHz): 3.19
+	Number of physical packages: 1
+	Number of physical CPUs: 8
+	Number of logical CPUs: 16
+	Graphics card #0 name: NVIDIA GeForce GTX 1050 Ti
+	Graphics card #0 vendor: NVIDIA
+	Graphics card #0 VRAM (MiB): 4096.00
+	Graphics card #0 deviceId: VideoController1
+	Graphics card #0 versionInfo: 32.0.15.6094
+	Memory slot #0 capacity (MiB): 8192.00
+	Memory slot #0 clockSpeed (GHz): 2.13
+	Memory slot #0 type: DDR4
+	Memory slot #1 capacity (MiB): 16384.00
+	Memory slot #1 clockSpeed (GHz): 2.13
+	Memory slot #1 type: DDR4
+	Memory slot #2 capacity (MiB): 8192.00
+	Memory slot #2 clockSpeed (GHz): 2.13
+	Memory slot #2 type: DDR4
+	Virtual memory max (MiB): 37581.82
+	Virtual memory used (MiB): 17271.88
+	Swap memory total (MiB): 4864.00
+	Swap memory used (MiB): 0.00
+	Space in storage for jna.tmpdir (MiB): <path not set>
+	Space in storage for org.lwjgl.system.SharedLibraryExtractPath (MiB): <path not set>
+	Space in storage for io.netty.native.workdir (MiB): <path not set>
+	Space in storage for java.io.tmpdir (MiB): available: 17452.53, total: 113947.69
+	Space in storage for workdir (MiB): available: 223945.72, total: 953852.00
+	Operating System Version: Microsoft Windows 10 (Home) build 19045
+	Process Elevated: false
+	Process Loads: Uptime: 52s, user: 306s (588.74%), kernel: 15s (28.22%), total: 321s (616.96%)
+	Process Virtual Size (MiB): 4006.04
+	Process Resident Size (MiB): 1753.63
+	JVM Flags: 0 total; 
+	Debug Flags: 0 total; 
+	Server Running: true
+	Player Count: 1 / 8; [ServerPlayer['Dev'/6, l='ServerLevel[New World]', x=-10.69, y=64.00, z=-18.76]]
+	Active Data Packs: vanilla, mod_data, mod/noprojectileiframes, mod/neoforge
+	Available Data Packs: minecart_improvements, redstone_experiments, trade_rebalance, vanilla, mod/neoforge, mod/noprojectileiframes, mod_data
+	Enabled Feature Flags: minecraft:vanilla
+	World Generation: Stable
+	World Seed: -8026199673002680818
+	Suppressed Exceptions: ~~NONE~~
+	Type: Integrated Server
+	Is Modded: Definitely; Client brand changed to 'neoforge'; Server brand changed to 'neoforge'
+	Launched Version: 26.2.0.32-beta
+	Class Processors: 
+		00.00%: neoforge:neoforge_dev_dist_cleaner
+		00.00%: neoforge:computing_frames (marker)
+		00.00%: neoforge:runtime_enum_extender
+		04.20%: neoforge:access_transformer
+		00.05%: neoforge:mixin
+		00.00%: neoforge:simple_processors_default (marker)
+		00.01%: neoforge.coremods:field_to_getter.net.minecraft.world.level.biome.biome
+		00.01%: neoforge.coremods:field_to_getter.net.minecraft.world.level.block.flowerpotblock
+		00.01%: neoforge.coremods:field_to_getter.net.minecraft.world.level.levelgen.structure.structure
+		00.26%: neoforge.coremods:method_redirector
+	Mod List: 
+		minecraft-patched-26.2.0.32-beta.jar              |Minecraft                     |minecraft                     |26.2                |Manifest: NOSIGNATURE
+		neoforge-26.2.0.32-beta-universal.jar             |NeoForge                      |neoforge                      |26.2.0.32-beta      |Manifest: NOSIGNATURE
+		main                                              |No Projectile I Frames        |noprojectileiframes           |26.2.0              |Manifest: NOSIGNATURE
+	Crash Report UUID: eb611313-84a6-4fab-b8a8-fb3de91c8dd9
+	FML: 11.0.13
+	NeoForge: 26.2.0.32-beta

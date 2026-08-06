@@ -1,0 +1,28 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "noprojectileiframes"
+version = "26.2.0"
+displayName = "No Projectile I Frames"
+authors = "Astrazoey"
+description = '''Removes i-frames from projectiles'''
+logoFile = "assets/noprojectileiframes/icon.png"
+
+[[dependencies.noprojectileiframes]]
+modId = "neoforge"
+type = "required"
+versionRange = "[4,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.noprojectileiframes]]
+modId = "minecraft"
+type = "required"
+versionRange = "[26.2, 26.3)"
+ordering = "NONE"
+side = "BOTH"
+
+[[mixins]]
+config = "noprojectileiframes.mixins.json"

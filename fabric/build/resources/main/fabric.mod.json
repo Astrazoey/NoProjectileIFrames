@@ -1,0 +1,26 @@
+{
+	"schemaVersion": 1,
+	"id": "noprojectileiframes",
+	"version": "26.2.0",
+	"name": "No Projectile I Frames",
+	"description": "Removes i-frames from projectiles",
+	"authors": [
+		"Astrazoey"
+	],
+	"license": "MIT",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+          "com.astrazoey.noprojectileiframes.fabric.NoProjectileIFramesFabric"
+		]
+	},
+	"mixins": [
+		"noprojectileiframes.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~26.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}

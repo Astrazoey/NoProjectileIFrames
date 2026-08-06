@@ -1,0 +1,4 @@
+/give @p minecraft:crossbow
+/enchant @p minecraft:multishot
+/summon creeper
+/give @p bow

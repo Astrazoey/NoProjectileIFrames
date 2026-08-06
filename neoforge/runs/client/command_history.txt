@@ -1,0 +1,4 @@
+/enchant @p minecraft:multishot 5
+/enchant @p minecraft:multishot 1
+/locate biome minecraft:sulfur_caves
+/tp @s -410 21 -457

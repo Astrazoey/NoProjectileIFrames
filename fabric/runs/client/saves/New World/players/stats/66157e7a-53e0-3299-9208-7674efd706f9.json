@@ -1,0 +1,16 @@
+{
+  "stats": {
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 217,
+      "minecraft:inspect_dispenser": 2,
+      "minecraft:walk_one_cm": 38,
+      "minecraft:total_world_time": 238,
+      "minecraft:leave_game": 1,
+      "minecraft:sneak_time": 1,
+      "minecraft:play_time": 217,
+      "minecraft:jump": 2,
+      "minecraft:time_since_death": 217
+    }
+  },
+  "DataVersion": 4903
+}

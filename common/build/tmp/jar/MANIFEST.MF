@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Specification-Title: No Projectile I Frames
+Specification-Vendor: Astrazoey
+Specification-Version: 26.2.0
+Implementation-Title: common
+Implementation-Version: 26.2.0
+Implementation-Vendor: Astrazoey
+Built-On-Minecraft: 26.2
+
